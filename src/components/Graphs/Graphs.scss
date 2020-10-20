@@ -1,0 +1,108 @@
+.container {
+    padding: 20px 20px 20px 60px;
+}
+
+.mtx {
+    display: flex;
+}
+
+.mtx__about {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mtx__random {
+    font-size: 1.2em;
+    width: 100px;
+
+}
+
+.mtx__title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.mtx__description {
+    max-width: 300px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.mtxContainer {
+    margin: 137px 20px;
+}
+
+.text {
+    font-size: 1.2em;
+}
+
+.graphOptions {
+    display: flex;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.mtxDim {
+    font-size: 1.2em;
+}
+
+.btn {
+    color: #13293D;
+    height: 40px;
+    min-width: 80px;
+    padding: 7px 9px;
+
+    border-radius: 15px;
+    background: #E7F0FF;
+    box-shadow:  7px 7px 15px #c4ccd9,
+    -7px -7px 15px #ffffff;
+
+    margin: 10px 0 10px 20px;
+
+    &:hover {
+        box-shadow: inset  5px 5px 8px #c4ccd9,
+        inset -5px -5px 8px #ffffff;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        box-shadow:  7px 7px 15px #c4ccd9,
+        -7px -7px 15px #ffffff;
+    }
+}
+
+.btn-rnd {
+    margin: 10px 0 10px 0;
+}
+
+.pathsList {
+    font-size: 1.1em;
+
+    padding: 20px;
+}
+
+.pathsList__item {
+    text-align: left;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    font-size: 1.1em;
+}
+
+.pathsList__item_searched {
+    color: #346fa5;
+}
+
+.pathsList__path {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.pathsList__pathVertex {
+    margin: 0 7px;
+}

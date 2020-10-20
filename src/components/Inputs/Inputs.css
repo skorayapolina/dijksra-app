@@ -1,0 +1,13 @@
+input[type="number"] {
+  border: 0;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+
+  border-radius: 3px;
+  background: linear-gradient(145deg, #d0d8e6, #f7ffff);
+  box-shadow:  4px 4px 8px #c4ccd9,
+  -4px -4px 8px #ffffff;
+}

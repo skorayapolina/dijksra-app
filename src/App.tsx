@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import {Graphs} from "./components/Graphs/Graphs";
+import {observer} from "mobx-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+@observer
+class App extends Component {
+    render() {
+        return (
+            <div className="App">
+                <header className="app">
+                    <h1 className="app__title">Алгоритм Дейкстры</h1>
+                    <p className="app__descriptionAlg">
+                        Алгоритм нахождения кратчайшего пути от заданной вершины графа до остальных вершин.
+                    </p>
+                </header>
+                <Graphs/>
+            </div>
+        );
+    }
 }
 
 export default App;
