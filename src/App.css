@@ -2,6 +2,32 @@
   text-align: center;
 }
 
+.nav {
+  display: flex;
+  padding: 0 20px;
+}
+
+.link {
+  font-size: 20px;
+  padding: 14px;
+}
+
+.link:hover {
+  opacity: 0.9;
+}
+
+.link:active {
+  opacity: 1;
+}
+
+.link__active {
+  box-shadow: 0 1px 0 0 #13293D;
+}
+
+.link__active:hover {
+  opacity: 1;
+}
+
 .graphs {
   display: flex;
 }

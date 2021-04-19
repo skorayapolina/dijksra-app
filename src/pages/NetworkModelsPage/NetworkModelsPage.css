@@ -1,0 +1,37 @@
+.content {
+    display: flex;
+    padding: 0 20px;
+}
+
+table {
+    width: fit-content;
+    margin-bottom: 20px;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+td:nth-child(1) {
+    text-align: center;
+}
+
+.input__section {
+    display: flex;
+    flex-direction: column;
+}
+
+.input__wrapper {
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.input__wrapper label {
+    margin: 0 8px;
+    font-weight: bold;
+}
+
+.btn__construct {
+    align-self: flex-start;
+}
