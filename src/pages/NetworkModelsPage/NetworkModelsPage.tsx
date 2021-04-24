@@ -92,6 +92,7 @@ class NetworkModelsPage extends Component {
                 type="number"
                 onChange={this.changeNumberOfEvents}
                 value={this.numberOfEvents}
+                autoFocus
               />
             </div>
 
@@ -102,7 +103,7 @@ class NetworkModelsPage extends Component {
                     <thead>
                       <tr>
                         <th>Номер работы</th>
-                        <th>Каким работам предшествует</th>
+                        <th>Каким работам предшествует <br/> (через запятую)</th>
                       </tr>
                     </thead>
 
