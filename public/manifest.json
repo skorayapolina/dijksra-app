@@ -1,6 +1,6 @@
 {
-  "short_name": "Dijkstra's algorithm",
-  "name": "Dijkstra's algorithm",
+  "short_name": "Graphs",
+  "name": "Graph algorithms",
   "icons": [
     {
       "src": "favicon.ico",
