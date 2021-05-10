@@ -9,12 +9,18 @@ table {
 }
 
 td, th {
+    border: 2px solid rgba(19, 41, 61, 0.5);
     text-align: left;
     padding: 8px;
 }
 
 td:nth-child(1) {
     text-align: center;
+}
+
+.table__input {
+    width: 100%;
+    background-color: #E7F0FF;
 }
 
 .input__section {

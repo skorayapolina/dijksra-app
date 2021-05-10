@@ -53,7 +53,6 @@ class NetworkModelsPage extends Component {
         }
       },
       height: "600px",
-      // width: "600px"
     };
 
     this.graphCreated = true;
@@ -119,6 +118,7 @@ class NetworkModelsPage extends Component {
                               onChange={this.onChange}
                               name={`${node}`}
                               value={this.pred[node]}
+                              className="table__input"
                             />
                           </td>
                         </tr>
