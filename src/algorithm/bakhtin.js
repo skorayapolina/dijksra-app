@@ -36,8 +36,11 @@ export function createNetworkModel(pred) {
   * 3. Если из пары событий выходят только фиктивные работы и их концы попарно совпадают,
   * то эти события склеваются
   * */
-  const pipe3 = () => {
-    const equalFictitiousOutgoingNodes = groupBy(getVerticesWithOnlyFictitiousOutgoingEdges(graph), 'adjacentNodes');
+  const step3 = () => {
+    const equalFictitiousOutgoingNodes = groupBy(
+      getVerticesWithOnlyFictitiousOutgoingEdges(graph),
+      'adjacentNodes'
+    );
 
     for (let key in equalFictitiousOutgoingNodes) {
       const targetNodes = equalFictitiousOutgoingNodes[key];
@@ -65,8 +68,11 @@ export function createNetworkModel(pred) {
   * 4. Если в пару событий выходят только фиктивные работы и их начала попарно совпадают,
   * то эти события склеваются
   * */
-  const pipe4 = () => {
-    const equalFictitiousIncomingNodes = groupBy(getVerticesWithOnlyFictitiousIncomingEdges(graph), 'incomingNodes');
+  const step4 = () => {
+    const equalFictitiousIncomingNodes = groupBy(
+      getVerticesWithOnlyFictitiousIncomingEdges(graph),
+      'incomingNodes'
+    );
 
     for (let key in equalFictitiousIncomingNodes) {
       const targetNodes = equalFictitiousIncomingNodes[key];
@@ -98,7 +104,7 @@ export function createNetworkModel(pred) {
   * 6. Если из начала фиктивной работы в её конец существует другой путь,
   * то эта работа убирается
   * */
-  const pipe6 = () => {
+  const step6 = () => {
     graph.nodes().forEach(node => {
       const adjNodes = graph.adjacent(node);
       if (adjNodes.length === 1 && graph.getEdgeWeight(node, adjNodes[0]) === 0) {
@@ -117,7 +123,7 @@ export function createNetworkModel(pred) {
   * 7. Если из события выходит только одна работа и она фиктивная,
   * то её начало и конец склеиваются
   * */
-  const pipe7 = () => {
+  const step7 = () => {
     graph.nodes().forEach(node => {
       if (node.charAt(0) !== 'F') {
         const adjNode = graph.adjacent(node)[0];
@@ -139,14 +145,16 @@ export function createNetworkModel(pred) {
   * 8. Если в событие входит только одна работа и она фиктивная,
   * то её начало и конец склеиваются
   * */
-  const pipe8 = () => {
+  const step8 = () => {
     graph.nodes().forEach(node => {
       const incomingEdges = getIncomingEdges(graph, node);
 
       if (incomingEdges[0]?.target.charAt(0) !== 'F') {
         if (incomingEdges.length === 1 && incomingEdges[0].weight === 0) {
           for (let i = 0; i < graph.adjacent(incomingEdges[0].target).length; i++) {
-            graph.addEdge(incomingEdges[0].source, graph.adjacent(incomingEdges[0].target)[i], graph.getEdgeWeight(node, graph.adjacent(incomingEdges[0].target)[i]))
+            graph.addEdge(incomingEdges[0].source,
+              graph.adjacent(incomingEdges[0].target)[i],
+              graph.getEdgeWeight(node, graph.adjacent(incomingEdges[0].target)[i]))
           }
 
           graph.removeNode(incomingEdges[0].target);
@@ -223,11 +231,11 @@ export function createNetworkModel(pred) {
 
   addWorks();
   addFictitiousWorks();
-  pipe3();
-  pipe4();
-  pipe6();
-  pipe7();
-  pipe8();
+  step3();
+  step4();
+  step6();
+  step7();
+  step8();
   joinStartEvents();
   joinEndEvents();
 

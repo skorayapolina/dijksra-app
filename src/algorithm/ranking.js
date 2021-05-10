@@ -6,7 +6,6 @@ export const rankingEvents = graph => {
   const ranked = [];
   const numberOfNodes = graph.nodes().length;
 
-  // rang 0
   graph.nodes().forEach(node => {
     if (getIncomingEdges(graph, node).length === 0) {
       ranking[0] = [node];
